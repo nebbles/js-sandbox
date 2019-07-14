@@ -34,8 +34,8 @@ function draw() {
     ellipse(f.x, f.y, 8);
   });
 
-  // vehicle.seek(mouse);
-  vehicle.eat(food);
+  vehicle.seek(mouse);
+  // vehicle.eat(food);
   vehicle.update();
   vehicle.render();
 
