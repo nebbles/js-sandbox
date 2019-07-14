@@ -1,2 +1,8 @@
 .DS_Store
 .vscode
+
+# Extensions to vs-code
+node_modules
+package.json
+package-lock.json
+.eslintrc.json
