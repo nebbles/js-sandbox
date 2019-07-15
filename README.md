@@ -1,21 +1,21 @@
 # Javascript Sandbox
 
-The JS sandbox is a repository full of small projects, coding challenges, and tutorials I have done with javascript. These are made to be run in the browser (no server side stuff here) and so are viewable at `https://nebbles.github.io/js-sandbox/*` just replace the `*` with the name of the folder, or just use the [view](#projects) links below.
+The JS sandbox is a repository full of small projects, coding challenges, and tutorials I have done with javascript. These are made to be run in the browser (no server side stuff here) and so are viewable, just use the [view](#projects) links below.
 
 ## Projects
 
-1. p5js-maze-builder ([view](https://nebbles.github.io/js-sandbox/p5js-maze-builder))
-1. p5js-perlin-noise ([view](https://nebbles.github.io/js-sandbox/p5js-perlin-noise))
-1. p5js-perlin-2d ([view](https://nebbles.github.io/js-sandbox/p5js-perlin-2d))
-1. p5js-matrix ([view](https://nebbles.github.io/js-sandbox/p5js-matrix))
-1. p5js-balltext ([view](https://nebbles.github.io/js-sandbox/p5js-balltext))
-1. p5js-seek-mouse ([view](https://nebbles.github.io/js-sandbox/p5js-seek-mouse))
-1. p5js-evo-bugs ([view](https://nebbles.github.io/js-sandbox/p5js-evo-bugs))
-1. p5js-fireworks ([view](https://nebbles.github.io/js-sandbox/p5js-fireworks))
-1. p5js-inv-kin ([view](https://nebbles.github.io/js-sandbox/p5js-inv-kin))
-1. p5js-evo-worms ([view](https://nebbles.github.io/js-sandbox/p5js-evo-worms))
-1. p5js-haze ([view](https://nebbles.github.io/js-sandbox/p5js-haze))
-1. p5js-tiles ([view](https://nebbles.github.io/js-sandbox/p5js-tiles))
+1. p5js-maze-builder ([view](https://nebbles.github.io/js-sandbox/p5js-maze-builder)) A self-building 2D grid based maze.
+2. p5js-perlin-noise ([view](https://nebbles.github.io/js-sandbox/p5js-perlin-noise)) A visualisation of one dimensional Perlin noise.
+3. p5js-perlin-2d ([view](https://nebbles.github.io/js-sandbox/p5js-perlin-2d)) A visualisation of particles in a 2D Perlin noise force field.
+4. p5js-matrix ([view](https://nebbles.github.io/js-sandbox/p5js-matrix)) A familar scene from the Matrix.
+5. p5js-balltext ([view](https://nebbles.github.io/js-sandbox/p5js-balltext)) Working with fonts and and particles.
+6. p5js-seek-mouse ([view](https://nebbles.github.io/js-sandbox/p5js-seek-mouse)) A simple mouse-seeking agent.
+7. p5js-evo-bugs ([view](https://nebbles.github.io/js-sandbox/p5js-evo-bugs)) A evolving population of bugs seeking food and avoiding poison.
+8. p5js-fireworks ([view](https://nebbles.github.io/js-sandbox/p5js-fireworks)) A simple fireworks simulation.
+9. p5js-inv-kin ([view](https://nebbles.github.io/js-sandbox/p5js-inv-kin)) An inverse kinematics model simulating snake or worm like movement.
+10. p5js-haze ([view](https://nebbles.github.io/js-sandbox/p5js-haze)) A graphical display of haze-like air. Collaboration with Clarisse Bret.
+11. p5js-tiles ([view](https://nebbles.github.io/js-sandbox/p5js-tiles)) A living wall of tiles that like to move around. Original work.
+12. p5js-evo-snakes ([view](https://nebbles.github.io/js-sandbox/p5js-evo-snakes)) Combining no.7 and no.9 to have a population of evolving snakes. Original work, with inspiration from D.Shiffman.
 
 ## License
 
