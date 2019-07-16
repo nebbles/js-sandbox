@@ -1,4 +1,4 @@
-const TIME_STEPS = 1;
+const TIME_STEPS = 10;
 var balls = [];
 // var food = [];
 // var poison = [];
@@ -33,7 +33,7 @@ function setup() {
   balls.push(new Ball(500, 300, 50, 1));
   // balls.push(new Ball(500, 500, 50, 1));
 
-  balls[0].vel = createVector( 3, 0);
+  balls[0].vel = createVector( 3/TIME_STEPS, 0);
   balls[1].vel = createVector(0, 0);
   // balls[2].vel = createVector(-10/TIME_STEPS, 10/TIME_STEPS);
 
@@ -96,28 +96,21 @@ function draw() {
   let centre = createVector(width/2, height/2);
   let mouse = createVector(mouseX, mouseY);
   // let gravity = createVector(0, 0);
-  let gravity = createVector(1/TIME_STEPS, 0);
+  let gravity = createVector(0.05/TIME_STEPS, 0);
   // let gravity = p5.Vector.sub(mouse, centre).limit(2);
   // arrow(centre, gravity.copy().mult(50), color(255));
 
 
   for (let t=0; t < TIME_STEPS; t++) {
-
+    
     for (var i = balls.length - 1; i >= 0; i--) {
-
-      balls[i].applyForce(gravity); // gravity
-
       
-    }
-
-    for (var i = balls.length - 1; i >= 0; i--) {
-
-
+      balls[i].applyForce(gravity); // gravity
+      
       // for every ball to check after this one
       for (let j = i - 1; j >= 0; j--) {
         balls[i].checkCollision(balls[j]);
       }
-
       balls[i].update();
     }
   }
