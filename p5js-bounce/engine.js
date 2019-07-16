@@ -1,6 +1,6 @@
 class Ball {
     constructor(x, y, radius, mass) {
-        let r_ = 50;
+        let r_ = random(10,50);
         if (radius) this.r = radius;
         else this.r = r_;
 
@@ -17,7 +17,7 @@ class Ball {
         this.vel = createVector();
         this.acc = createVector();
         if (mass) this.m = mass;
-        else this.m = 1;
+        else this.m = map(this.r, 0, 50, 0, 1);
 
         this.maxspeed = 100; // terminal velocity
         this.maxforce = 0.1;
