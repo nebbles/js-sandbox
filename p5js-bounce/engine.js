@@ -60,8 +60,8 @@ class Ball {
             this.pos.sub(correctionVector);
 
             let e = .5;
-            let v1 = this.postCollisionVel(ball, e);
-            let v2 = ball.postCollisionVel(this, e);
+            let v1 = this.solveCollisionVel(ball, e);
+            let v2 = ball.solveCollisionVel(this, e);
             this.vel = v1;
             ball.vel = v2;
 
@@ -85,11 +85,14 @@ class Ball {
         }
     }
 
-    postCollisionVel(ball, e) {
+    solveCollisionVel(ball, e) {
         // Computation for n-dimensional collision using vectors
         // https://en.wikipedia.org/wiki/Elastic_collision#Two-dimensional
-        
-        
+        //
+        // Also see https://www.euclideanspace.com/physics/dynamics/collision/twod/index.htm
+        // Note that J is the impulse
+        // v = u - J / m
+
         let dx = p5.Vector.sub(this.pos, ball.pos); // position delta vector
         let u1 = this.vel.copy();
         let du = p5.Vector.sub(u1, ball.vel.copy());
@@ -97,17 +100,8 @@ class Ball {
             dx.mult(
                 p5.Vector.dot(du, dx) / (dx.mag() ** 2) // fraction
             ).mult(
-                (e+1) * ball.m / (this.m + ball.m) // scalar
+                (e + 1) * ball.m / (this.m + ball.m) // scalar
             ));
-
-        // Also see https://www.euclideanspace.com/physics/dynamics/collision/twod/index.htm
-
-        // v = u-J/m
-        // let p1 = e*2*(this.m*ball.m / (this.m+ball.m)); // scalar
-        // let p2 = p5.Vector.dot(du, dx) * (p1); // scalar
-        // let J = dx.mult(p2);
-        // return p5.Vector.sub(u1, J.div(this.m));
-        
     }
 
     applyForce(force) {
