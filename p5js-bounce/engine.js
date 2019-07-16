@@ -78,12 +78,13 @@ class Ball {
             // ball.applyForce(R);
 
             // if ball isnt recognised as a current collision
-            if (this.collidingList.indexOf(ball) == -1) {
-                this.collidingList.push(ball); // add to the colliding list
+            if (!this.collidingList.contains(ball)) {
+                this.collidingList.push(ball); // add to this colliding list
+                ball.collidingList.push(this); // add to the ball colliding list
             }
         } else {
-            let index = this.collidingList.indexOf(ball);
-            this.collidingList.splice(index, 1);
+            this.collidingList.remove(ball);
+            ball.collidingList.remove(this);
         }
     }
 
