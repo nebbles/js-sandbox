@@ -31,31 +31,17 @@ function setup() {
 
   balls.push(new Ball(100, 300, 50, 1));
   balls.push(new Ball(500, 300, 50, 1));
-  // balls.push(new Ball(500, 500, 50, 1));
 
-  balls[0].vel = createVector(3 / TIME_STEPS, 0);
-  balls[1].vel = createVector(0, 0);
+  // balls[0].vel = createVector(3 / TIME_STEPS, 0);
   // balls[2].vel = createVector(-10/TIME_STEPS, 10/TIME_STEPS);
 
-  // for (var i = 0; i < 1; i++) {
-  //   let x = random(width);
-  //   let y = random(height);
-  //   snakes.push(new Snake({
-  //     nsegs: 25,
-  //     seglen: 5,
-  //     colourStart: color(255, 0, 255),
-  //     colourEnd: color(255, 255, 0),
-  //     maxspeed: 3,
-  //     maxforce: 0.35,
-  //   }, x, y));
-  // }
+  for (var i = 0; i < 20; i++) {
+    let x = random(width);
+    let y = random(height);
+    balls.push(new Ball(null, null, null, null));
+  }
 
   frameRate(30);
-
-  //   let a1 = createVector(10, 0);
-  //   let a2 = createVector(10, 0);
-  //   let ang = ang
-  //   console.log();
 } {
   // function windowResized() {
   //   resizeCanvas(windowWidth, windowHeight);
@@ -90,15 +76,17 @@ function setup() {
 function draw() {
   background(51);
 
-
-
-
+  // console.log(accelerationX); // DOES NOT WORK ON iOS 12.2+
+  
+  // let gravity = createVector(0, 0);
+  // let gravity = createVector(-0.05 / TIME_STEPS, 0);
+  
   let centre = createVector(width / 2, height / 2);
   let mouse = createVector(mouseX, mouseY);
-  // let gravity = createVector(0, 0);
-  let gravity = createVector(0.05 / TIME_STEPS, 0);
-  // let gravity = p5.Vector.sub(mouse, centre).limit(2);
-  // arrow(centre, gravity.copy().mult(50), color(255));
+  let gravity = p5.Vector.sub(mouse, centre).limit(0.05 / TIME_STEPS);
+  if (debug_behaviourProfile.checked) {
+    arrow(centre, gravity.copy().mult(5000), color(255, 0, 0));
+  }
 
 
   for (let t = 0; t < TIME_STEPS; t++) {
