@@ -45,7 +45,23 @@ class Ball {
     }
 
     checkCollision(ball) {
+        // Get distances between the balls components
+        let distanceVect = p5.Vector.sub(ball.pos, this.pos);
+
+        // Calculate magnitude of the vector separating the balls
+        let distanceVectMag = distanceVect.mag();
+
+        // Minimum distance before they are touching
+        let minDistance = this.r + ball.r;
+
         if (this.isColliding(ball)) {
+            // Force distance correction on the position of the balls
+            let distanceCorrection = (minDistance - distanceVectMag) / 2.0;
+            let d = distanceVect.copy();
+            let correctionVector = d.normalize().mult(distanceCorrection);
+            ball.pos.add(correctionVector);
+            this.pos.sub(correctionVector);
+
             let e = .5;
             let v1 = this.postCollisionVel(ball, e);
             let v2 = ball.postCollisionVel(this, e);
@@ -55,40 +71,20 @@ class Ball {
             // Need to apply reaction forces to each body
             // For each body, the component of the force that is applied in 
             // direction to other body, needs to have equal and opposite force applied
-            let R = createVector();
-            R = this.reactionForceFrom(ball);
+            // let R = createVector();
+            // R = this.reactionForceFrom(ball);
             // this.applyForce(R);
-            R = ball.reactionForceFrom(this);
-            ball.applyForce(R);
+            // R = ball.reactionForceFrom(this);
+            // ball.applyForce(R);
 
+            // if ball isnt recognised as a current collision
+            if (this.collidingList.indexOf(ball) == -1) {
+                this.collidingList.push(ball); // add to the colliding list
+            }
+        } else {
+            let index = this.collidingList.indexOf(ball);
+            this.collidingList.splice(index, 1);
         }
-
-
-        // if (this.isColliding(ball)) {
-        //     // if ball isnt recognised as in a current collision
-        //     if (this.collidingList.indexOf(ball) == -1) {
-        //         this.collidingList.push(ball); // add to the colliding list
-
-        //         let e = .9;
-        //         let v1 = this.postCollisionVel(ball, e);
-        //         let v2 = ball.postCollisionVel(this, e);
-        //         this.vel = v1;
-        //         ball.vel = v2;
-
-
-        //         // Need to apply reaction forces to each body
-        //         // For each body, the component of the force that is applied in 
-        //         // direction to other body, needs to have equal and opposite force applied
-        //         let R = createVector();
-        //         R = this.reactionForceFrom(ball);
-        //         // this.applyForce(R);
-        //         R = ball.reactionForceFrom(this);
-        //         ball.applyForce(R);
-        //     }
-        // } else {
-        //     let index = this.collidingList.indexOf(ball);
-        //     this.collidingList.splice(index, 1);
-        // }
     }
 
     postCollisionVel(ball, e) {
