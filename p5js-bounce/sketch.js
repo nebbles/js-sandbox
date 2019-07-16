@@ -33,7 +33,7 @@ function setup() {
   balls.push(new Ball(500, 300, 50, 1));
   // balls.push(new Ball(500, 500, 50, 1));
 
-  balls[0].vel = createVector( 3/TIME_STEPS, 0);
+  balls[0].vel = createVector(3 / TIME_STEPS, 0);
   balls[1].vel = createVector(0, 0);
   // balls[2].vel = createVector(-10/TIME_STEPS, 10/TIME_STEPS);
 
@@ -52,61 +52,61 @@ function setup() {
 
   frameRate(30);
 
-//   let a1 = createVector(10, 0);
-//   let a2 = createVector(10, 0);
-//   let ang = ang
-//   console.log();
+  //   let a1 = createVector(10, 0);
+  //   let a2 = createVector(10, 0);
+  //   let ang = ang
+  //   console.log();
+} {
+  // function windowResized() {
+  //   resizeCanvas(windowWidth, windowHeight);
+  // }
+
+  // function mousePressed() {
+  //   food.push(createVector(mouseX, mouseY));
+  // }
+
+  // function touchStarted() {
+  //   food.push(createVector(mouseX, mouseY));
+  // }
+
+  // function touchMoved(event) {
+  //   // each finger on screen will correspond to a different snake
+  //   engageNSnakes = min(snakes.length, event.touches.length);
+  //   for (let i = 0; i < engageNSnakes; i++) {
+  //     let target = createVector(event.touches[i].screenX, event.touches[i].screenY);
+  //     snakes[i].applyForce(snakes[i].seek(target));
+  //   }
+  //   return false; // return false to block page scrolling
+  // }
+
+  // function mouseDragged() {
+  //   for (let s of snakes) {
+  //     s.applyForce(s.seek(createVector(mouseX, mouseY)));
+  //   }
+  //   // food.push(createVector(mouseX, mouseY));
+  // }
 }
-{
-// function windowResized() {
-//   resizeCanvas(windowWidth, windowHeight);
-// }
 
-// function mousePressed() {
-//   food.push(createVector(mouseX, mouseY));
-// }
-
-// function touchStarted() {
-//   food.push(createVector(mouseX, mouseY));
-// }
-
-// function touchMoved(event) {
-//   // each finger on screen will correspond to a different snake
-//   engageNSnakes = min(snakes.length, event.touches.length);
-//   for (let i = 0; i < engageNSnakes; i++) {
-//     let target = createVector(event.touches[i].screenX, event.touches[i].screenY);
-//     snakes[i].applyForce(snakes[i].seek(target));
-//   }
-//   return false; // return false to block page scrolling
-// }
-
-// function mouseDragged() {
-//   for (let s of snakes) {
-//     s.applyForce(s.seek(createVector(mouseX, mouseY)));
-//   }
-//   // food.push(createVector(mouseX, mouseY));
-// }
-}
 function draw() {
   background(51);
 
-  
-  
 
-  let centre = createVector(width/2, height/2);
+
+
+  let centre = createVector(width / 2, height / 2);
   let mouse = createVector(mouseX, mouseY);
   // let gravity = createVector(0, 0);
-  let gravity = createVector(0.05/TIME_STEPS, 0);
+  let gravity = createVector(0.05 / TIME_STEPS, 0);
   // let gravity = p5.Vector.sub(mouse, centre).limit(2);
   // arrow(centre, gravity.copy().mult(50), color(255));
 
 
-  for (let t=0; t < TIME_STEPS; t++) {
-    
+  for (let t = 0; t < TIME_STEPS; t++) {
+
     for (var i = balls.length - 1; i >= 0; i--) {
-      
+
       balls[i].applyForce(gravity); // gravity
-      
+
       // for every ball to check after this one
       for (let j = i - 1; j >= 0; j--) {
         balls[i].checkCollision(balls[j]);
