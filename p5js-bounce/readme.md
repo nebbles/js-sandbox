@@ -30,3 +30,10 @@ Unfortunately, due to privacy changes in iOS 12, my plan to link the direction o
 ## License
 
 This project inherits the [repository license](../README.md#license).
+
+## Resources
+
+I'd also recommend the following resources.
+
+- https://developer.ibm.com/tutorials/wa-build2dphysicsengine/
+- http://brm.io/game-physics-for-beginners/
