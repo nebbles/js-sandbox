@@ -1,8 +1,8 @@
 # Bounce
 
-Bounce is a original work which began life on the 15 July 2019. It uses the p5js framework, a wrapper to HTML5 canvas functionality. The game engine is custom built.
+[![](https://img.shields.io/static/v1.svg?label=View&message=demo&color=f7df1f&style=for-the-badge&logo=javascript)](https://nebbles.github.io/js-sandbox/p5js-bounce)
 
-All the rest, original work, with a heck of a lot of research.
+Bounce is a original work which began life on the 15 July 2019. It uses the [p5.js](https://p5js.org) framework, a wrapper to HTML5 canvas functionality. The game engine is custom built. All the rest, original work, with a heck of a lot of research.
 
 I was interested in modelling simple spheres with a custom 2D physics engine. In the first day I mainly focused on trying to get the dynamics correct for a 2D plane. It was surprisingly hard to find the equations needed for implementation, especially then adapting the perfectly elastic conditioned equation to handle inelastic (and inbetween) collisions too by utilising the [coefficient of restitution](https://en.wikipedia.org/wiki/Coefficient_of_restitution). Finally, the true information heroes emerged, a mixture of [Wikipedia](https://en.wikipedia.org/wiki/Elastic_collision#Two-dimensional) which had surprisingly no clear reference to the derivation, and [Euclidean Space](https://www.euclideanspace.com/physics/dynamics/collision/twod/index.htm) which helped me work out the correct equation to compute the final velocity of the circle (bear in mind no rotation/friction was taken into account!):
 
