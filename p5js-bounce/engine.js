@@ -77,6 +77,8 @@ class Ball {
             // R = ball.reactionForceFrom(this);
             // ball.applyForce(R);
 
+            // -- NOTE -- THE BELOW CODE IS DISABLED AS IT HAS A BUG
+            // THE COLLIDING LIST KEEPS GROWING WHEN IN CONTACT
             // if ball isnt recognised as a current collision
             // if (!this.collidingList.contains(ball)) {
                 // this.collidingList.push(ball); // add to this colliding list
