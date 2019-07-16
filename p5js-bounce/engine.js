@@ -121,18 +121,20 @@ class Ball {
     }
 
     applyBorderCollisions() {
-        let efficiency = 1.0;
+        let restitution = 1.0;
 
         if (this.pos.x >= width - this.r) {
-            this.vel.x = -abs(this.vel.x) * efficiency;
+            this.vel.x = -abs(this.vel.x) * restitution;
         } else if (this.pos.x <= this.r) {
-            this.vel.x = abs(this.vel.x) * efficiency;
+            this.vel.x = abs(this.vel.x) * restitution;
         }
         if (this.pos.y >= height - this.r) {
-            this.vel.y = -abs(this.vel.y) * efficiency;
+            this.vel.y = -abs(this.vel.y) * restitution;
         } else if (this.pos.y <= this.r) {
-            this.vel.y = abs(this.vel.y) * efficiency;
+            this.vel.y = abs(this.vel.y) * restitution;
         }
+        this.pos.x = constrain(this.pos.x, 0 + this.r, width - this.r);
+        this.pos.y = constrain(this.pos.y, 0 + this.r, height - this.r);
     }
 
     update() {
@@ -141,9 +143,6 @@ class Ball {
         this.pos.add(this.vel); // update the position
         this.prevAcc = this.acc.copy();
         this.applyBorderCollisions();
-        this.pos.x = constrain(this.pos.x, 0 + this.r, width - this.r);
-        this.pos.y = constrain(this.pos.y, 0 + this.r, height - this.r);
-
         this.acc.mult(0); // reset acceleration
     }
 
