@@ -1,8 +1,8 @@
 <p><img height="50" src=".github/js-sandbox-logo.svg" alt="Sandbox Logo"></p>
 
-### Javascript Sandbox
+> 𝗝𝗦 𝘀𝗮𝗻𝗱𝗯𝗼𝘅 ∙ An assortment of javascript projects, challenges, tutorials
 
-The JS sandbox is a repository full of small projects, coding challenges, and tutorials I have done with javascript. These are made to be run in the browser (no server side stuff here) and so are viewable, just use the [view](#projects) links below.
+All code runs natively in the browser, although has not been checked for extensive backwards compatibility. There is no server-side code. All the projects are statically hosted by GitHub and can be seen by using the [view](#projects) links below.
 
 ## Projects
 
