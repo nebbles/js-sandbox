@@ -29,20 +29,17 @@ class Ball {
         return (this.pos.dist(ball.pos) < this.r + ball.r);
     }
 
-    reactionForceFrom(ball) {
-        // Vector from current (A) to other (B), normalised
-        let AB = p5.Vector.sub(ball.pos, this.pos).normalize();
+    // reactionForceFrom(ball) {
+    //     // Vector from current (A) to other (B), normalised
+    //     let AB = p5.Vector.sub(ball.pos, this.pos).normalize();
 
-        // Calculate the 
-        // console.log("acc", this.acc);
-        let mag = p5.Vector.dot(this.acc.copy(), AB);
-        let R = AB.mult(-mag);
-
-        // console.log(R);
-        arrow(this.pos, R.copy().mult(30), color(0,0,255));
-        
-        return R;
-    }
+    //     // Calculate the 
+    //     // console.log("acc", this.acc);
+    //     let mag = p5.Vector.dot(this.acc.copy(), AB);
+    //     let R = AB.mult(-mag);
+    //     arrow(this.pos, R.copy().mult(30), color(0, 0, 255));
+    //     return R;
+    // }
 
     checkCollision(ball) {
         // Get distances between the balls components
