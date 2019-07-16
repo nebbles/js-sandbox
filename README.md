@@ -1,4 +1,4 @@
-![](.github/js-sandbox-logo.svg)
+<img height="50" src=".github/js-sandbox-logo.svg" alt="Sandbox Logo">
 <br>
 <br>
 
