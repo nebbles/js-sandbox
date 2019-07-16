@@ -74,7 +74,7 @@ function setup() {
 }
 
 function draw() {
-  background(51);
+  background(0);
 
   // console.log(accelerationX); // DOES NOT WORK ON iOS 12.2+
   
