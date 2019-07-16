@@ -20,7 +20,9 @@ class Ball {
         else this.m = map(this.r, 0, 50, 0, 1);
 
         this.maxspeed = 100; // terminal velocity
-        this.maxforce = 0.1;
+        this.maxforce = 0.5;
+        this.borderRestitution = 0.8;
+        this.ballRestitution = 0.8;
 
         this.collidingList = [];
     }
@@ -59,7 +61,8 @@ class Ball {
             ball.pos.add(correctionVector);
             this.pos.sub(correctionVector);
 
-            let e = .5;
+            let e = this.ballRestitution + random(-0.1, 0.1); // add imperfection
+            e = constrain(e, 0, 1); // ensure it remains in valid range
             let v1 = this.solveCollisionVel(ball, e);
             let v2 = ball.solveCollisionVel(this, e);
             this.vel = v1;
@@ -108,9 +111,7 @@ class Ball {
         this.acc.add(force);
     }
 
-    applyBorderCollisions() {
-        let restitution = 1.0;
-
+    applyBorderCollisions(restitution) {
         if (this.pos.x >= width - this.r) {
             this.vel.x = -abs(this.vel.x) * restitution;
         } else if (this.pos.x <= this.r) {
@@ -130,7 +131,10 @@ class Ball {
         this.vel.limit(this.maxspeed); // limit the speed
         this.pos.add(this.vel); // update the position
         this.prevAcc = this.acc.copy();
-        this.applyBorderCollisions();
+
+        let e = this.borderRestitution + random(-0.1, 0.1); // add imperfection
+        e = constrain(e, 0, 1); // ensure it remains in valid range
+        this.applyBorderCollisions(e);
         this.acc.mult(0); // reset acceleration
     }
 
