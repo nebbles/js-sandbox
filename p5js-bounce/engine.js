@@ -78,13 +78,13 @@ class Ball {
             // ball.applyForce(R);
 
             // if ball isnt recognised as a current collision
-            if (!this.collidingList.contains(ball)) {
-                this.collidingList.push(ball); // add to this colliding list
-                ball.collidingList.push(this); // add to the ball colliding list
-            }
-        } else {
-            this.collidingList.remove(ball);
-            ball.collidingList.remove(this);
+            // if (!this.collidingList.contains(ball)) {
+                // this.collidingList.push(ball); // add to this colliding list
+                // ball.collidingList.push(this); // add to the ball colliding list
+            // }
+        // } else {
+            // this.collidingList.remove(ball);
+            // ball.collidingList.remove(this);
         }
     }
 
