@@ -5,14 +5,14 @@ var balls = [];
 var debug_behaviourProfile;
 var debug_motionProfile;
 
-// function toggleDebug() {
-//   var x = document.getElementById("debug-panel");
-//   if (x.style.display === "none") {
-//     x.style.display = "block";
-//   } else {
-//     x.style.display = "none";
-//   }
-// }
+function toggleDebug() {
+  var x = document.getElementById("debug-panel");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
 function setup() {
   // Set up canvas - fill screen with grid
@@ -138,11 +138,12 @@ function draw() {
 }
 
 // draw an arrow for a vector at a given base position
-function arrow(base, vec, myColor) {
+function arrow(base, vec, myColor, weight) {
+  if (!weight) weight = 3;
   if (vec.mag() > 0) {
     push();
     stroke(myColor);
-    strokeWeight(3);
+    strokeWeight(weight);
     fill(myColor);
     translate(base.x, base.y);
     line(0, 0, vec.x, vec.y);

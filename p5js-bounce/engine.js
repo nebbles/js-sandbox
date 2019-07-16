@@ -139,32 +139,10 @@ class Ball {
         this.vel.add(this.acc); // update speed
         this.vel.limit(this.maxspeed); // limit the speed
         this.pos.add(this.vel); // update the position
+        this.prevAcc = this.acc.copy();
         this.applyBorderCollisions();
         this.pos.x = constrain(this.pos.x, 0 + this.r, width - this.r);
         this.pos.y = constrain(this.pos.y, 0 + this.r, height - this.r);
-
-        if (true) {
-            {
-                arrow(this.pos, this.vel.copy().mult(5), color(255))
-                // push();
-                // translate(this.pos.x, this.pos.y);
-                // let an = this.vel.heading();
-                // rotate(an);
-                // stroke(0, 255, 255);
-                // line(0, 0, this.vel.mag() * 20, 0);
-                // pop();
-            } {
-                arrow(this.pos, this.acc.copy().mult(10), color(255, 0, 0))
-                // push();
-                // translate(this.pos.x, this.pos.y);
-                // let an = this.acc.heading();
-                // rotate(an);
-                // strokeWeight(5);
-                // stroke(255, 0, 255);
-                // line(0, 0, this.acc.mag() * 50, 0);
-                // pop();
-            }
-        }
 
         this.acc.mult(0); // reset acceleration
     }
@@ -174,5 +152,10 @@ class Ball {
         stroke(255);
         noFill();
         ellipse(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
+
+        if (debug_motionProfile.checked) {
+            arrow(this.pos, this.vel.copy().mult(20), color(255), 3);
+            arrow(this.pos, this.prevAcc.copy().mult(5000), color(255, 0, 0), 1);
+        }
     }
 }
