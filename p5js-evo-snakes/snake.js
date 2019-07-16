@@ -38,6 +38,7 @@ class Snake {
     if (!this.dna) this.dna = {};
     if (!this.dna.nsegs) this.dna.nsegs = 25;
     if (!this.dna.seglen) this.dna.seglen = 10;
+    if (!this.dna.antennae) this.dna.antennae = true;
 
     if (!this.dna.maxspeed) this.dna.maxspeed = 3;
     if (!this.dna.maxforce) this.dna.maxforce = 0.2;
@@ -317,6 +318,29 @@ class Snake {
       var range = this.dna.foodPerception;
       arc(0, 0, range * 2, range * 2, -this.fov / 2, this.fov / 2, PIE);
     }
+
+    // Draw antennae
+    if (this.dna.antennae) {
+      let l = 8;
+      let r = 2;
+      // let angle = constrain(this.fov, 10 /180*PI, 160/180*PI);
+      let angle = this.fov;
+      let end1x = l * cos(angle / 2);
+      let end1y = l * sin(angle / 2);
+      let end2x = l * cos(-angle / 2);
+      let end2y = l * sin(-angle / 2);
+      
+      strokeWeight(1);
+      stroke(this.dna.colourEnd);
+      line(0, 0, end1x, end1y);
+      line(0, 0, end2x, end2y);
+      
+      noStroke();
+      fill(this.dna.colourEnd);
+      ellipse(end1x, end1y, r, r);
+      ellipse(end2x, end2y, r, r);
+    }
+    
     pop(); // reset to original origin
   }
 }
