@@ -1,4 +1,4 @@
-<p><img height="50" src=".github/js-sandbox-logo.svg" alt="Sandbox Logo"></p>
+<p><img height="50" src="https://raw.githubusercontent.com/nebbles/js-sandbox/master/.github/js-sandbox-logo.svg?sanitize=true" alt="Sandbox Logo"></p>
 
 > 𝗝𝗦 𝘀𝗮𝗻𝗱𝗯𝗼𝘅 ∙ An assortment of javascript projects, challenges, tutorials
 
