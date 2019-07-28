@@ -1,16 +1,17 @@
-// var xoff1 = 0;
-// var xoff2 = 1000;
-//
-var inc = 0.02;
+var inc = 0.01;
 var start = 0;
 
 function setup() {
-  createCanvas(300, 300);
-
+  // Set up canvas - fill screen with grid
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.elt.style.position = 'fixed';
+  canvas.style('top', '0');
+  canvas.style('left', '0');
+  canvas.style('z-index', '-1');
 }
 
 function draw() {
-  background(51);
+  background(0);
 
   stroke(255);
   noFill();
@@ -25,15 +26,4 @@ function draw() {
   endShape();
 
   start += inc;
-
-
-  // noLoop();
-
-  // var x = map(noise(xoff1),0,1,0,width);
-  // var y = map(noise(xoff2),0,1,0,height);
-  //
-  // xoff1 += 0.01;
-  // xoff2 += 0.01;
-
-  // ellipse(x,y,24);
 }
