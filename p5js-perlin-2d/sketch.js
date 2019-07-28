@@ -5,7 +5,6 @@ var inc = 0.1;
 var scl = 5;
 var cols, rows;
 var zoff = 0;
-var fr;
 
 var particles = [];
 var flowfield = [];
@@ -13,11 +12,16 @@ var flowfield = [];
 var currentPos = [];
 
 function setup() {
-  createCanvas(300, 300);
+  // Set up canvas - fill screen with grid
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.elt.style.position = 'fixed';
+  canvas.style('top', '0');
+  canvas.style('left', '0');
+  canvas.style('z-index', '-1');
+
   pixelDensity(1);
   cols = floor(width / scl);
   rows = floor(height / scl);
-  fr = createP('');
 
   flowfield = new Array(cols * rows);
 
@@ -79,6 +83,4 @@ function draw() {
   }
   // updatePosTracker();
   // showPosTracker();
-
-  fr.html(floor(frameRate()));
 }
