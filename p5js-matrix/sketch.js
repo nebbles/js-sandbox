@@ -2,7 +2,12 @@ var symbolSize = 10;
 var streams = [];
 
 function setup() {
-  createCanvas(window.innerWidth, window.innerHeight);
+  // Set up canvas - fill screen with grid
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.elt.style.position = 'fixed';
+  canvas.style('top', '0');
+  canvas.style('left', '0');
+  canvas.style('z-index', '-1');
 
   textSize(symbolSize);
 
