@@ -6,7 +6,7 @@ All code runs natively in the browser, although has not been checked for extensi
 
 ## Projects
 
-1. p5js-maze-builder ([view](https://nebbles.github.io/js-sandbox/p5js-maze-builder)) A self-building 2D grid based maze.
+1. **[Maze Builder](https://github.com/nebbles/js-sandbox/tree/master/p5js-maze-builder)** ([view](https://nebbles.github.io/js-sandbox/p5js-maze-builder)) A self-building 2D grid based maze.
 2. **[Perlin Noise](https://github.com/nebbles/js-sandbox/tree/master/p5js-perlin-noise)** ([view](https://nebbles.github.io/js-sandbox/p5js-perlin-noise)) A visualisation of one dimensional Perlin noise.
 3. **[Perlin 2D](https://github.com/nebbles/js-sandbox/tree/master/p5js-perlin-2d)** ([view](https://nebbles.github.io/js-sandbox/p5js-perlin-2d)) A visualisation of particles in a 2D Perlin noise force field.
 4. **[Matrix](https://github.com/nebbles/js-sandbox/tree/master/p5js-matrix)** ([view](https://nebbles.github.io/js-sandbox/p5js-matrix)) A familar scene from the Matrix.

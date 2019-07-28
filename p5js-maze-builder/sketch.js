@@ -1,4 +1,3 @@
-
 var cols, rows;
 var w = 30;
 var grid = [];
@@ -6,10 +5,18 @@ var current;
 var stack = [];
 
 function setup() {
-  createCanvas(300, 300);
-  frameRate(5);
+  // Set up canvas - fill screen with grid
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.elt.style.position = 'fixed';
+  canvas.style('top', '0');
+  canvas.style('left', '0');
+  canvas.style('z-index', '-1');
+
+  frameRate(20);
   cols = floor(width/w);
   rows = floor(height/w);
+  w = max(width / cols, height / rows)-0.05;
+  console.log(w);
 
   for (var y = 0; y < rows; y++) {
     for (var x = 0; x < cols; x++) {
@@ -94,7 +101,7 @@ function Cell(i, j) {
 
      if (this.visited) {
        noStroke();
-       fill(0,255,0, 100);
+       fill(0);
        rect(x, y, w, w);
      }
 
