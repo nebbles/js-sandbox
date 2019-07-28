@@ -1,8 +1,12 @@
 function Firework() {
   this.hue = random(255);
+
+  let ivy = height / 52;
+  let idv = 3;
+
   this.firework = new Particle(
-    random(width), height,
-    0, random(-12, -8),
+    random(width), height, // x, y
+    0, random(-ivy-idv, -ivy+idv), // vx, vy
     this.hue
   );
   this.exploded = false;
