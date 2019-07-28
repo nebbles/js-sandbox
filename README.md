@@ -14,7 +14,7 @@ All code runs natively in the browser, although has not been checked for extensi
 6. p5js-seek-mouse ([view](https://nebbles.github.io/js-sandbox/p5js-seek-mouse)) A simple mouse-seeking agent.
 7. p5js-evo-bugs ([view](https://nebbles.github.io/js-sandbox/p5js-evo-bugs)) A evolving population of bugs seeking food and avoiding poison.
 8. p5js-fireworks ([view](https://nebbles.github.io/js-sandbox/p5js-fireworks)) A simple fireworks simulation.
-9. p5js-inv-kin ([view](https://nebbles.github.io/js-sandbox/p5js-inv-kin)) An inverse kinematics model simulating snake or worm like movement.
+9. **[Inverse Kinematics](https://github.com/nebbles/js-sandbox/tree/master/p5js-inv-kin)** ([view](https://nebbles.github.io/js-sandbox/p5js-inv-kin)) An inverse kinematics model simulating snake or worm like movement.
 10. **[Haze](https://github.com/nebbles/js-sandbox/tree/master/p5js-haze)** ([view](https://nebbles.github.io/js-sandbox/p5js-haze)) A cartoon visualisation of hazy air. Collaboration with Clarisse Bret.
 11. **[Tiles](https://github.com/nebbles/js-sandbox/tree/master/p5js-tiles)** ([view](https://nebbles.github.io/js-sandbox/p5js-tiles)) A living wall of tiles that like to move around. Original work.
 12. **[Evo Snakes](https://github.com/nebbles/js-sandbox/tree/master/p5js-evo-snakes)** ([view](https://nebbles.github.io/js-sandbox/p5js-evo-snakes)) Combining no.7 and no.9 to have a population of evolving snakes. Original work, with inspiration from D.Shiffman.
