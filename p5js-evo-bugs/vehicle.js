@@ -121,7 +121,7 @@ function Vehicle(x, y, dna) {
     translate(this.pos.x, this.pos.y);
     rotate(angle);
 
-    if (debug.checked()) {
+    if (debug_behaviourProfile.checked) {
       // visualise the dna weighting
       fill(127, 10);
 
@@ -186,6 +186,6 @@ function Vehicle(x, y, dna) {
     if (this.pos.x < 0) this.pos.x = 0;
     if (this.pos.x > width) this.pos.x = width;
     if (this.pos.y < 0) this.pos.y = 0;
-    if (this.pos.y > width) this.pos.y = height;
+    if (this.pos.y > height) this.pos.y = height;
   };
 }

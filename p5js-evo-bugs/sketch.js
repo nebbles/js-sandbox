@@ -3,10 +3,28 @@ var vehicles = [];
 var food = [];
 var poison = [];
 
-var debug;
+var debug_behaviourProfile;
+
+function toggleDebug() {
+  var x = document.getElementById("debug-panel");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
 function setup() {
-  createCanvas(window.innerWidth, window.innerHeight - 20);
+  // Set up canvas - fill screen with grid
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.elt.style.position = 'fixed';
+  canvas.style('top', '0');
+  canvas.style('left', '0');
+  canvas.style('z-index', '-1');
+
+  // Link debug checkboxes
+  debug_behaviourProfile = document.getElementById('debugBehaviourProfile');
+  // debug_behaviourProfile.checked = true; // default to enabled
 
   for (var i = 0; i < 50; i++) {
     var x = random(width);
@@ -29,14 +47,16 @@ function setup() {
     var y2 = random(height);
     poison.push(createVector(x2, y2));
   }
-
-  debug = createCheckbox();
 }
 
 function mouseDragged() {
   vehicles.push(
     new Vehicle(mouseX, mouseY)
   );
+}
+
+function touchMoved(event) {
+  return false; // return false to block page scrolling
 }
 
 function draw() {
