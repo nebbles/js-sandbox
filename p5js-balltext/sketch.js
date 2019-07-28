@@ -6,12 +6,27 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(window.innerWidth, window.innerHeight);
+  // Set up canvas - fill screen with grid
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.elt.style.position = 'fixed';
+  canvas.style('top', '0');
+  canvas.style('left', '0');
+  canvas.style('z-index', '-1');
 
   background(51);
   textFont(font);
 
-  var points = font.textToPoints('train', 60, 210, 200);
+  console.log(width/4.7);
+  console.log(width/15.6);
+
+  var points = font.textToPoints(
+    'sandbox',  // text
+    width / 15.6, height / 2, // x, y 
+    width / 4.7, // size
+    {
+      sampleFactor: 0.2
+    }
+    );
 
   for (var i = 0; i < points.length; i++) {
     var p = points[i];
@@ -24,12 +39,23 @@ function setup() {
   // console.log(vehicles);
 }
 
+function touchMoved(event) {
+  // Override the mouseX/Y variables with the touch position
+  mouseX = event.touches[0].clientX;
+  mouseY = event.touches[0].clientY;  
+  return false; // return false to block page scrolling
+}
+
+function touchEnded() {
+  mouseX = 0;
+  mouseY = 0;
+}
+
 function draw() {
-  background(51);
+  background(0);
   vehicles.forEach(function(vehicle) {
     vehicle.behaviours();
     vehicle.update();
     vehicle.show();
   });
-
 }

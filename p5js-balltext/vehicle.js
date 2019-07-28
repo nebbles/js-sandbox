@@ -4,9 +4,9 @@ function Vehicle(x, y) {
   this.vel = p5.Vector.random2D();
   this.acc = createVector();
 
-  this.r = 8;
-  this.maxspeed = 5;
-  this.maxforce = 0.3;
+  this.r = 5;
+  this.maxspeed = 10;
+  this.maxforce = 0.5;
 }
 
 Vehicle.prototype.behaviours = function() {
@@ -15,7 +15,7 @@ Vehicle.prototype.behaviours = function() {
   var flee = this.flee(mouse);
 
   arrive.mult(1);
-  flee.mult(1);
+  flee.mult(1.5);
 
   this.applyForce(arrive);
   this.applyForce(flee);
