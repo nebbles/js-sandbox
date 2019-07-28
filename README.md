@@ -11,7 +11,7 @@ All code runs natively in the browser, although has not been checked for extensi
 3. p5js-perlin-2d ([view](https://nebbles.github.io/js-sandbox/p5js-perlin-2d)) A visualisation of particles in a 2D Perlin noise force field.
 4. p5js-matrix ([view](https://nebbles.github.io/js-sandbox/p5js-matrix)) A familar scene from the Matrix.
 5. **[Ball Text](https://github.com/nebbles/js-sandbox/tree/master/p5js-balltext)** ([view](https://nebbles.github.io/js-sandbox/p5js-balltext)) Working with fonts and and particles.
-6. p5js-seek-mouse ([view](https://nebbles.github.io/js-sandbox/p5js-seek-mouse)) A simple mouse-seeking agent.
+6. **[Seek Mouse](https://github.com/nebbles/js-sandbox/tree/master/p5js-seek-mouse)** ([view](https://nebbles.github.io/js-sandbox/p5js-seek-mouse)) A simple mouse-seeking agent.
 7. **[Evo Bugs](https://github.com/nebbles/js-sandbox/tree/master/p5js-evo-bugs)** ([view](https://nebbles.github.io/js-sandbox/p5js-evo-bugs)) A evolving population of bugs seeking food and avoiding poison.
 8. **[Fireworks](https://github.com/nebbles/js-sandbox/tree/master/p5js-fireworks)** ([view](https://nebbles.github.io/js-sandbox/p5js-fireworks)) A simple fireworks simulation.
 9. **[Inverse Kinematics](https://github.com/nebbles/js-sandbox/tree/master/p5js-inv-kin)** ([view](https://nebbles.github.io/js-sandbox/p5js-inv-kin)) An inverse kinematics model simulating snake or worm like movement.
